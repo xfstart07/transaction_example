@@ -1,6 +1,9 @@
 class Product < ApplicationRecord
   has_many :product_photos
 
+  # 数据库中也设置为 null false
+  validates :title, presence: true
+
   # 创建
   def self.create_product
     Product.transaction do
